@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,9 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`max-w-5xl mx-auto h-screen bg-black/80 text-white ${inter.variable} ${poppins.variable} antialiased`}
+        className={` scroll-smooth max-w-5xl mx-auto  bg-black/80 text-white ${inter.variable} ${poppins.variable} antialiased`}
       >
-        {children}
+        <div className="pt-10">
+          <Header />
+          <div className="h-[1px] bg-white w-full antialiased mt-5 "></div>
+        </div>
+        <div className="flex max-w-96 md:max-w-2xl mx-auto justify-center items-center pt-10">
+          {children}
+        </div>
       </body>
     </html>
   );

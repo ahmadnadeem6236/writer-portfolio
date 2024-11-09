@@ -61,6 +61,20 @@ export default {
         poppins: ["var(--font-poppins)"],
       },
     },
+    keyframes: {
+      "slide-in-from-right": {
+        "0%": { transform: "translateX(100%)" },
+        "100%": { transform: "translateX(0)" },
+      },
+      "slide-in-from-left": {
+        "0%": { transform: "translateX(-100%)" },
+        "100%": { transform: "translateX(0)" },
+      },
+    },
+    animation: {
+      "slide-in-from-right": "slide-in-from-right 0.3s ease-out",
+      "slide-in-from-left": "slide-in-from-left 0.3s ease-out",
+    },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
